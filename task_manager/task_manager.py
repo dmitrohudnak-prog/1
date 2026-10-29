@@ -42,5 +42,9 @@ def set_master_password():
             return password
 
 
-if __name__ == "__main__":
-    set_master_password()
+def login_gate(master_password):
+    password = input("Введіть пароль: ") 
+    if password == master_password:
+        return True
+    else:
+        return False
