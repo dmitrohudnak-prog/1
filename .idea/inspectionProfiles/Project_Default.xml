@@ -1,0 +1,41 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <list>
+          <option value="altgraph" />
+          <option value="certifi" />
+          <option value="charset-normalizer" />
+          <option value="docutils" />
+          <option value="ffpyplayer" />
+          <option value="filetype" />
+          <option value="idna" />
+          <option value="Kivy" />
+          <option value="kivy-deps.angle" />
+          <option value="kivy-deps.glew" />
+          <option value="Kivy-Garden" />
+          <option value="kivy_deps.sdl2" />
+          <option value="numpy" />
+          <option value="opencv-python" />
+          <option value="packaging" />
+          <option value="pefile" />
+          <option value="pillow" />
+          <option value="pygame" />
+          <option value="Pygments" />
+          <option value="pyinstaller" />
+          <option value="pyinstaller-hooks-contrib" />
+          <option value="pypiwin32" />
+          <option value="PyQt6" />
+          <option value="PyQt6-Qt6" />
+          <option value="PyQt6_sip" />
+          <option value="pyTelegramBotAPI" />
+          <option value="pywin32" />
+          <option value="pywin32-ctypes" />
+          <option value="requests" />
+          <option value="urllib3" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
