@@ -1,13 +1,15 @@
 import random
 
-def ganerate_password(length):
+def generate_password(length):
     characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%"
     password = ""
 
     for _ in range(length):
         password += random.choice(characters)
+    
     print("згенерований пароль:", password)
     print("сила пароля:", check_password_strength(password))
+    return password
 
 def check_password_strength(password):
     has_digit = False
@@ -17,6 +19,7 @@ def check_password_strength(password):
             has_digit = True
         if char.isupper():
             has_upper = True
+            
     if len(password) >= 8 and has_digit and has_upper:
         return "надійний"
     elif len(password) >= 6:
@@ -24,9 +27,20 @@ def check_password_strength(password):
     else:
         return "слабкий"
 
+def set_master_password():
+    while True:
+        password = input("Введіть пароль: ")
+        if check_password_strength(password) == "слабкий":
+            choice = input("Ви хочете згенерувати пароль? (так/ні): ")
+            if choice.lower() == "так":
+                # Генеруємо новий і повертаємо його
+                return generate_password(12)
+            else:
+                return password
+        else:
+            print("Пароль прийнято як достатньо надійний!")
+            return password
 
 
-
-
-
-
+if __name__ == "__main__":
+    set_master_password()
