@@ -49,16 +49,16 @@ def login_gate(master_password):
     else:
         return False
 
-def show_menu():
+def show_menu(tasks):
     while True:
         print("1. Додати завдання\n 2. Показати всі завдання\n 3. Видалити завдання\n 4. Вийти")
         choice = input("Ваш вибір: ")
         if choice == "1":
-            add_task()
+            add_task(tasks)
         elif choice == "2":
-            view_tasks()
+            view_tasks(tasks)
         elif choice == "3":
-            delete_task()
+            delete_task(tasks)
         else:
             break
 
@@ -82,7 +82,7 @@ def main():
     tasks = []
     master_password = set_master_password()
     if login_gate(master_password) == True:
-        show_menu()
+        show_menu(tasks)
     else:
         print("В доступі відмовлено")
     print("Робота закінчена")
