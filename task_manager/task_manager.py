@@ -63,10 +63,16 @@ def show_menu():
             break
 
 def add_task(tasks):
-    choice = input("Введи назву завдання: ")
-    tasks.append({"text":choice, "done":False})
+    choice = input("введи назву завдання: ")
+    tasks.append({"text": choice, "done": False})
 
-
+def view_tasks(tasks):
+    if not tasks:
+        print("Немає завдань.")
+    else:
+        print("\nСписок завдань:")
+        for i, task in enumerate(tasks, start=1):
+            print(f"{i}. {task['text']} - {'✓' if task['done'] else 'X'}")
 
 
 
