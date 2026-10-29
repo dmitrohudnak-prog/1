@@ -78,10 +78,16 @@ def delete_task(tasks):
     view_tasks(tasks)
     choice = input("введи номер завдання для видалення: ")
     tasks.pop(choice - 1)
+def main():
+    tasks = []
+    master_password = set_master_password()
+    if login_gate(master_password) == True:
+        show_menu()
+    else:
+        print("В доступі відмовлено")
+    print("Робота закінчена")
 
-
-
-
+main()
 
 
 
