@@ -33,7 +33,7 @@ def set_master_password():
         if check_password_strength(password) == "слабкий":
             choice = input("Ви хочете згенерувати пароль? (так/ні): ")
             if choice.lower() == "так":
-                # Генеруємо новий і повертаємо його
+
                 return generate_password(12)
             else:
                 return password
@@ -48,3 +48,38 @@ def login_gate(master_password):
         return True
     else:
         return False
+
+def show_menu():
+    while True:
+        print("1. Додати завдання\n 2. Показати всі завдання\n 3. Видалити завдання\n 4. Вийти")
+        choice = input("Ваш вибір: ")
+        if choice == "1":
+            add_task()
+        elif choice == "2":
+            view_tasks()
+        elif choice == "3":
+            delete_task()
+        else:
+            break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
