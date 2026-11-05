@@ -68,6 +68,14 @@ def save_tasks(tasks, filename=TASKS_FILE):
 
         json.dump(tasks, file, ensure_ascii=False, indent=2)
 
+def load_tasks(filename=TASKS_FILE):
+    try:
+        with open(filename, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+
+
 def login_gate(master_password):
     password = input("Введіть пароль: ") 
     if password == master_password:
@@ -107,7 +115,7 @@ def delete_task(tasks):
     choice = input("введи номер завдання для видалення: ")
     tasks.pop(choice - 1)
 def main():
-    tasks = []
+    tasks = load_tasks()
     master_password = set_master_password()
     if login_gate(master_password) == True:
         show_menu(tasks)
