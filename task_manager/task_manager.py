@@ -46,6 +46,7 @@ def mark_task_done(tasks):
         return
     tasks[number - 1]["done"] = True
     print("Завдання позначено виконаним:", tasks[number - 1]["text"])
+save_tasks(tasks)
 
 def set_master_password():
     while True:
@@ -101,6 +102,7 @@ def show_menu(tasks):
 def add_task(tasks):
     choice = input("введи назву завдання: ")
     tasks.append({"text": choice, "done": False})
+save_tasks(tasks)
 
 def view_tasks(tasks):
     if not tasks:
@@ -114,6 +116,8 @@ def delete_task(tasks):
     view_tasks(tasks)
     choice = input("введи номер завдання для видалення: ")
     tasks.pop(choice - 1)
+save_tasks(tasks)
+
 def main():
     tasks = load_tasks()
     master_password = set_master_password()
