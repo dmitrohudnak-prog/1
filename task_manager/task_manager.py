@@ -62,6 +62,12 @@ def set_master_password():
             return password
 
 
+def save_tasks(tasks, filename=TASKS_FILE):
+
+    with open(filename, "w", encoding="utf-8") as file:
+
+        json.dump(tasks, file, ensure_ascii=False, indent=2)
+
 def login_gate(master_password):
     password = input("Введіть пароль: ") 
     if password == master_password:
